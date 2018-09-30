@@ -7,4 +7,9 @@ describe('App', () => {
     const wrapper = shallow(<App />)
     expect(wrapper).toMatchSnapshot()
   })
+
+  it('should have the default state', () => {
+    const wrapper = shallow(<App />)
+    expect(wrapper.state()).toEqual({ vegetables: [] })
+  })
 })
