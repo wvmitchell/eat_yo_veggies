@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 
 class AddVeggiesForm extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      veggie: ''
+    }
+  }
+
   updateNewVeggie = (event) => {
     this.setState({ veggie: event.target.value })
   }
