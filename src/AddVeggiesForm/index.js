@@ -5,6 +5,11 @@ class AddVeggiesForm extends Component {
     this.setState({ veggie: event.target.value })
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.addVegetable(this.state.veggie)
+  }
+
   render() {
     return(
       <form>

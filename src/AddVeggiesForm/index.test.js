@@ -21,4 +21,21 @@ describe('AddVeggiesForm', () => {
       expect(wrapper.state('veggie')).toEqual('squash')
     })
   })
+
+  describe('handleSubmit', () => {
+    it('should digest the form submission and call addVegetable', () => {
+      // Setup
+      const mockEvent = { preventDefault: jest.fn() }
+      const mockAddVegetable = jest.fn()
+      const wrapper = shallow(<AddVeggiesForm addVegetable={mockAddVegetable} />)
+      wrapper.setState({ veggie: 'squash' })
+
+      // Execution
+      wrapper.instance().handleSubmit(mockEvent)
+
+      // Expectation
+      expect(mockEvent.preventDefault).toHaveBeenCalled()
+      expect(mockAddVegetable).toHaveBeenCalledWith('squash')
+    })
+  })
 })
