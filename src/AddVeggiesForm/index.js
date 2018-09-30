@@ -19,9 +19,9 @@ class AddVeggiesForm extends Component {
 
   render() {
     return(
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input placeholer="New Vegetable" />
-        <button>Add it</button>
+        <button type="submit">Add it</button>
       </form>
     )
   }

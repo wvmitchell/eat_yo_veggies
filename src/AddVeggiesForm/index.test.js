@@ -28,6 +28,19 @@ describe('AddVeggiesForm', () => {
   })
 
   describe('handleSubmit', () => {
+    it('should be called on submit', () => {
+      // Setup
+      const wrapper = shallow(<AddVeggiesForm addVegetable={jest.fn()}/>)
+      const spy = spyOn(wrapper.instance(), 'handleSubmit')
+      wrapper.instance().forceUpdate()
+
+      // Execution
+      wrapper.find('form').simulate('submit')
+
+      // Expectation
+      expect(spy).toHaveBeenCalled()
+    })
+
     it('should digest the form submission and call addVegetable', () => {
       // Setup
       const mockEvent = { preventDefault: jest.fn() }
