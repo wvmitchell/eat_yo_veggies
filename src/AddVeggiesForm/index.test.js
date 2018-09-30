@@ -14,6 +14,19 @@ describe('AddVeggiesForm', () => {
   })
 
   describe('updateNewVeggie', () => {
+    it('should be called on change', () => {
+      // Setup
+      const wrapper = shallow(<AddVeggiesForm />)
+      const spy = spyOn(wrapper.instance(), 'updateNewVeggie')
+      wrapper.instance().forceUpdate()
+
+      // Execution
+      wrapper.find('input').simulate('change')
+
+      // Expectation
+      expect(spy).toHaveBeenCalled()
+    })
+
     it('should take the change event and update the state', () => {
       // Setup
       const mockEvent = { target: { value: 'squash' } }
