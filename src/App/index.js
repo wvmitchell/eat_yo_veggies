@@ -10,6 +10,10 @@ class App extends Component {
     }
   }
 
+  addVegetable = (veggie) => {
+    this.setState({ vegetables: [...this.state.vegetables, veggie]})
+  }
+
   render() {
     return (
       <div className="App">
