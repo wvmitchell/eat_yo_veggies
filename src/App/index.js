@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <AddVeggiesForm />
+        <AddVeggiesForm addVegetable={this.addVegetable} />
       </div>
     );
   }

@@ -4,6 +4,8 @@ exports[`App should match the snapshot 1`] = `
 <div
   className="App"
 >
-  <AddVeggiesForm />
+  <AddVeggiesForm
+    addVegetable={[Function]}
+  />
 </div>
 `;
