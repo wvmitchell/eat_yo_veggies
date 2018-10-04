@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AddVeggiesForm should have a default state snapshot 1`] = `
+Object {
+  "veggie": "",
+}
+`;
+
 exports[`AddVeggiesForm should match the snapshot 1`] = `
 <form
   onSubmit={[Function]}

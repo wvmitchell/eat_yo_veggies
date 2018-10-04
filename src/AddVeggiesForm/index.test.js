@@ -13,6 +13,11 @@ describe('AddVeggiesForm', () => {
     expect(wrapper.state()).toEqual({ veggie: '' })
   })
 
+  it('should have a default state snapshot', () => {
+    const wrapper = shallow(<AddVeggiesForm />)
+    expect(wrapper.state()).toMatchSnapshot()
+  })
+
   describe('updateNewVeggie', () => {
     it('should be called on change', () => {
       // Setup
