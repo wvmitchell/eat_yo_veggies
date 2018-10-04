@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import App from './index';
 
 describe('App', () => {
@@ -35,6 +35,18 @@ describe('App', () => {
       
       // Expectation
       expect(wrapper.state('veggies')).toEqual(['kale', 'broccoli'])
+    })
+  })
+
+  describe('e2e', () => {
+    it('should let the user add a veggie to the app', () => {
+      const wrapper = mount(<App />)
+
+      wrapper.find('input').simulate('change', { target: { value: 'kale' }})
+      wrapper.find('form').simulate('submit')
+
+      expect(wrapper.state('veggies')).toEqual(['kale'])
+      expect(wrapper.find('VeggieCard').length).toEqual(1)
     })
   })
 })
