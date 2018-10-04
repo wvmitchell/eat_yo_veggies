@@ -21,7 +21,7 @@ class AddVeggiesForm extends Component {
     return(
       <form onSubmit={this.handleSubmit}>
         <input 
-          placeholer="New Vegetable" 
+          placeholder="New Vegetable" 
           onChange={this.updateNewVeggie} />
         <button type="submit">Add it</button>
       </form>

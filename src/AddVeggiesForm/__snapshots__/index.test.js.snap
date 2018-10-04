@@ -12,7 +12,7 @@ exports[`AddVeggiesForm should match the snapshot 1`] = `
 >
   <input
     onChange={[Function]}
-    placeholer="New Vegetable"
+    placeholder="New Vegetable"
   />
   <button
     type="submit"
