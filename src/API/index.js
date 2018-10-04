@@ -1,6 +1,3 @@
-
-
-
 export const getVeggies = async () => {
   const response = await fetch('http://localhost:3001/veggies')
   if(response.ok) {
@@ -9,7 +6,3 @@ export const getVeggies = async () => {
     throw new Error('Response was not ok')
   }
 }
-
-
-
-
