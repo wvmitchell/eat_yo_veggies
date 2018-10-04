@@ -10,7 +10,7 @@ describe('App', () => {
 
   it('should have the default state', () => {
     const wrapper = shallow(<App />)
-    expect(wrapper.state()).toEqual({ vegetables: [] })
+    expect(wrapper.state()).toEqual({ veggies: [] })
   })
 
   describe('addVegetable', () => {
@@ -22,19 +22,19 @@ describe('App', () => {
       wrapper.instance().addVegetable('broccoli')
       
       // Expectation
-      expect(wrapper.state('vegetables')).toEqual(['broccoli'])
+      expect(wrapper.state('veggies')).toEqual(['broccoli'])
     })
 
     it('should not overwrite other veggies', () => {
       // Setup
       const wrapper = shallow(<App />)
-      wrapper.setState({ vegetables: ['kale']})
+      wrapper.setState({ veggies: ['kale']})
 
       // Execution
       wrapper.instance().addVegetable('broccoli')
       
       // Expectation
-      expect(wrapper.state('vegetables')).toEqual(['kale', 'broccoli'])
+      expect(wrapper.state('veggies')).toEqual(['kale', 'broccoli'])
     })
   })
 })
