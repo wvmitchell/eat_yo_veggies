@@ -19,7 +19,7 @@ describe('AddVeggiesForm', () => {
   })
 
   describe('updateNewVeggie', () => {
-    it('should be called on change', () => {
+    it('should call updateNewVeggie onChange', () => {
       // Setup
       const wrapper = shallow(<AddVeggiesForm />)
       const spy = spyOn(wrapper.instance(), 'updateNewVeggie')
@@ -32,7 +32,7 @@ describe('AddVeggiesForm', () => {
       expect(spy).toHaveBeenCalled()
     })
 
-    it('should take the change event and update the state', () => {
+    it('should update the state onChange', () => {
       // Setup
       const mockEvent = { target: { value: 'squash' } }
       const wrapper = shallow(<AddVeggiesForm />)
@@ -59,18 +59,19 @@ describe('AddVeggiesForm', () => {
       expect(spy).toHaveBeenCalled()
     })
 
-    it('should digest the form submission and call addVegetable', () => {
+    it('should call addVegetable onSubmit', () => {
       // Setup
       const mockEvent = { preventDefault: jest.fn() }
       const mockAddVegetable = jest.fn()
-      const wrapper = shallow(<AddVeggiesForm addVegetable={mockAddVegetable} />)
+      const wrapper = shallow(<AddVeggiesForm 
+                                addVegetable={mockAddVegetable} 
+                              />)
       wrapper.setState({ veggie: 'squash' })
 
       // Execution
       wrapper.instance().handleSubmit(mockEvent)
 
       // Expectation
-      expect(mockEvent.preventDefault).toHaveBeenCalled()
       expect(mockAddVegetable).toHaveBeenCalledWith('squash')
     })
   })
